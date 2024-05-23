@@ -5,8 +5,18 @@
   Once you've implemented the logic, test your code by running
 */
 
+const VOWELS = "aeiou";
+
 function countVowels(str) {
-    // Your code here
+  return str
+    .split("")
+    .reduce(
+      (totalVowelCount, char) =>
+        VOWELS.includes(char.toLowerCase())
+          ? (totalVowelCount += 1)
+          : totalVowelCount,
+      0
+    );
 }
 
 module.exports = countVowels;
