@@ -6,7 +6,13 @@
 */
 
 function findLargestElement(numbers) {
-    
+  if (numbers.length <= 0) {
+    return;
+  }
+
+  return numbers.reduce((largestNum, num) =>
+    num > largestNum ? num : largestNum
+  );
 }
 
-module.exports = findLargestElement;
+console.log(findLargestElement([-3, -7, -2, -9, -1]));
